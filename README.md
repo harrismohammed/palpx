@@ -4,7 +4,7 @@
 
 ### <b>1) Problem statement :</b>
 
-To Build a question answering system for a text article.
+To Build a question answering system for a text article. Which returns the answer to the question with a confidence score.
 
 ### <b>2) Input :</b>
 
@@ -67,3 +67,18 @@ G. SPACY = spaCy is a free open-source library for Natural Language Processing i
 - <"p"> When some information is to be displayed on the webpage as a block of text, this tag is used. Each such tag appears as its own paragraph.
 - <"table">  Tables are displayed in HTML with the help of this tag, where data is displayed in cells formed by intersection of rows and columns.
 
+### <b>7) Procedure :</b>
+
+- Download and import all the necessary libraries and packages.
+- Enter the link for the webpage that needs to be scraped in html format.
+- Print the HTTP status code. If it returns 200,then the request has succeeded.
+- Strip all Html tags and carry out preprocessing to obtain the clean article text and store each sentence in a list.
+- Match the words in the question from the list of sentences of the article. 
+- Extract sentences before and after containing majority of the words from the question to obtain the context.
+- Using spacy find the subject, object and the root word of the sentence. This is done inorder to understand on what topic the question revolves around.
+- Find the sentence from the context containing the subject, object and the root word. As this sentence is supposed to contain the answer.
+
+### <b>8) Future Possible modifications :</b>
+
+- Word embeddings can be applied. This helps build a very robust model.
+- Googles open source pretrained model BERT can be attached to build a question answer model.
