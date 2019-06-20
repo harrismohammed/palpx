@@ -70,10 +70,16 @@ G. SPACY = spaCy is a free open-source library for Natural Language Processing i
 
 - Step 4 : In this step, we find the CONTEXT by searching through the article we can find where the Question is present. First match the words in the question from the list of sentences of the article and then Extract sentences before and after containing majority of the words from the question to obtain the CONTEXT.
 
-- Step 5 : Using spacy find the subject, object and the root word of the sentence. This is done inorder to understand on what topic the question revolves around. Find the sentence from the context containing the subject, object and the root word. As this sentence is supposed to contain the answer.
+- Step 5 : Using Spacy's token dependencies find the subject, object and the root word of the sentence. Store this as the key phrase. This is done inorder to understand on what topic the question revolves around. Using the Key Phrase find the sentence from the context containing the subject, object and the root word. As this sentence is supposed to contain the answer.
 
 
 ### <b>7) Future Possible modifications :</b>
 
-- Word embeddings can be applied. This helps build a very robust model.
-- Using the context that I obtained,Google's open source pretrained model(BERT) can be attached to build a question answer model. 
+#### Word embeddings can be applied. This helps build a very robust model.
+
+Word Embeddings help capture the syntactical similarity or relation with other words. Mathematically, if the cosine angle between any 2 given words is close to 0, then they are similar. This enables us to refine the search for the answer, Our model would be capable to understand whether the word in the question and context are similar or dissimilar. Moreover, word embeddings are nothing but vectors. This is important to compute for the model mentioned below.
+
+#### Using the context that I obtained,Google's open source pretrained model(BERT) can be attached to build a question answer model. 
+
+BERT, or Bidirectional Encoder Representations from Transformers, is a new method for language representations which obtains state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks. BERT is trained as a general-purpose "language understanding" model on a large text corpus (like Wikipedia), and then the model can be downstreamed to perform NLP tasks that we care about (like question answering).
+
