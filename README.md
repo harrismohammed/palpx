@@ -35,6 +35,7 @@ B. NLTK = Natural Language processing Toolkit. It can be used for a wide range o
 After installing nltk, you need to download 'punkt'; which enables you to tokenize :
 
 > import nltk
+
 > nltk.download('punkt')
 
 C. BEAUTIFUL SOUP = This library helps us to get the HTML structure of the page that we want to work with. We can then, use its functions to access specific elements and extract relevant information.
