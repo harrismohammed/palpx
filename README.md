@@ -60,10 +60,20 @@ G. SPACY = spaCy is a free open-source library for Natural Language Processing i
 
 > $ python -m spacy download en
 
-### <b>6) Procedure :</b>
+### <b>6) Step by Step Procedure :</b>
+
+- Step 1 : We need to download and import all the required libraries and packages. Pls see above section for the requirements
+
+- Step 2 : We request the user to provide any reference Wikepedia Article that will be used as the input text corpus. Here we validate the url and then use BeautifulSoup library to extract data(scraped in html format). The striphtml function removes all Html tags and carry out preprocessing to obtain the clean article text and store each sentence in a list. We then tokenize the article into individual sentences using sent_tokenize function.
+
+- Step 3 : Here we request the user to enter the desired question pertaining the Wikepedia URL provided.
+
+- Step 4 : In this step, we find the CONTEXT by searching through the article we can find where the Question is present. First match the words in the question from the list of sentences of the article and then Extract sentences before and after containing majority of the words from the question to obtain the CONTEXT.
+
+- Step 5 : Using spacy find the subject, object and the root word of the sentence. This is done inorder to understand on what topic the question revolves around. Find the sentence from the context containing the subject, object and the root word. As this sentence is supposed to contain the answer.
 
 
 ### <b>7) Future Possible modifications :</b>
 
 - Word embeddings can be applied. This helps build a very robust model.
-- Googles open source pretrained model BERT can be attached to build a question answer model.
+- Using the context that I obtained,Google's open source pretrained model(BERT) can be attached to build a question answer model. 
